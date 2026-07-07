@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teyra Partners — M&A and Strategic Advisory</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --gold: #9C7A32;
+    --gold-bright: #C9A961;
+    --gold-light: #F5EEDC;
+    --gold-dark: #6B5220;
+    --navy: #0A121C;
+    --navy-mid: #161F29;
+    --white: #ffffff;
+    --off-white: #f8f7f4;
+    --gray-100: #f2f1ee;
+    --gray-300: #d8d5ce;
+    --gray-500: #8a867c;
+    --gray-700: #4a4640;
+    --text: #1a1714;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--white);
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* ── NAV ───────────────────────────────────────────── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3rem;
+    height: 68px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .nav-logo {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    letter-spacing: 0.5px;
+    color: var(--white);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .nav-logo span { color: var(--gold-bright); }
+
+  .nav-logo img {
+    height: 46px;
+    width: auto;
+    filter: brightness(0) invert(1);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 0;
+    list-style: none;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 0 1.25rem;
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    letter-spacing: 0.2px;
+    height: 68px;
+    line-height: 68px;
+    transition: color 0.15s, border-bottom 0.15s;
+    border-bottom: 2px solid transparent;
+  }
+
+  .nav-links a:hover {
+    color: var(--white);
+    border-bottom-color: var(--gold-bright);
+  }
+
+  .lang-switch {
+    display: flex;
+    gap: 2px;
+    margin-right: 1.25rem;
+  }
+
+  .lang-switch a {
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.4);
+    text-decoration: none;
+    padding: 5px 9px;
+    border-radius: 2px;
+    transition: color 0.15s, background 0.15s;
+    letter-spacing: 0.3px;
+  }
+
+  .lang-switch a:hover { color: var(--white); background: rgba(255,255,255,0.08); }
+  .lang-switch a.active { color: var(--white); background: rgba(255,255,255,0.12); }
+
+  .nav-cta {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--white);
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 8px 18px;
+    border-radius: 2px;
+    transition: background 0.15s, border-color 0.15s;
+    white-space: nowrap;
+  }
+
+  .nav-cta:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.6);
+  }
+
+  /* ── HERO ───────────────────────────────────────────── */
+  .hero {
+    background: var(--navy);
+    color: var(--white);
+    padding: 5rem 3rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 70% 50%, rgba(156,122,50,0.12) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .hero-breadcrumb {
+    font-size: 12px;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.5px;
+    margin-bottom: 2rem;
+  }
+
+  .hero-breadcrumb a { color: rgba(255,255,255,0.45); text-decoration: none; }
+  .hero-breadcrumb a:hover { color: var(--gold-bright); }
+  .hero-breadcrumb span { margin: 0 0.5rem; }
+
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 5rem;
+    align-items: start;
+    max-width: 1200px;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 52px;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    margin-bottom: 1.5rem;
+    color: var(--white);
+  }
+
+  .hero-lead {
+    font-size: 17px;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 2.5rem;
+    max-width: 520px;
+  }
+
+  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  .btn-primary-dark {
+    background: var(--gold);
+    color: var(--white);
+    border: none;
+    padding: 12px 24px;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    border-radius: 2px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.15s;
+  }
+
+  .btn-primary-dark:hover { background: #7C5F27; }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--white);
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 12px 24px;
+    font-size: 13px;
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    border-radius: 2px;
+    text-decoration: none;
+    display: inline-block;
+    transition: border-color 0.15s, background 0.15s;
+  }
+
+  .btn-ghost:hover { border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.05); }
+
+  /* Hero stats card */
+  .hero-stats-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 4px;
+    padding: 2rem;
+    backdrop-filter: blur(8px);
+  }
+
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 1.5rem;
+  }
+
+  .stat-box {
+    text-align: center;
+    padding: 0 1rem;
+    border-right: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .stat-box:last-child { border-right: none; }
+
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--white);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .stat-label { font-size: 11px; color: rgba(255,255,255,0.45); letter-spacing: 0.5px; text-transform: uppercase; }
+
+  .hero-deals { display: flex; flex-direction: column; gap: 0; }
+
+  .deal-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .deal-row:last-child { border-bottom: none; }
+
+  .deal-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold-bright); flex-shrink: 0; }
+
+  .deal-name { font-size: 13px; color: rgba(255,255,255,0.75); flex: 1; }
+
+  .deal-badge {
+    font-size: 10px;
+    font-weight: 500;
+    padding: 3px 9px;
+    border-radius: 2px;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+  }
+
+  .badge-closed { background: rgba(156,122,50,0.25); color: var(--gold-bright); }
+  .badge-active { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.6); }
+
+  /* ── INTRO ───────────────────────────────────────────── */
+  .intro-section {
+    padding: 5rem 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .intro-section .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 1.5rem;
+  }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .intro-grid h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: -0.3px;
+    color: var(--text);
+  }
+
+  .intro-body p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--gray-700);
+    margin-bottom: 1.25rem;
+  }
+
+  /* ── CAPABILITIES ───────────────────────────────────────────── */
+  .capabilities-section {
+    background: var(--off-white);
+    border-top: 1px solid var(--gray-300);
+    border-bottom: 1px solid var(--gray-300);
+    padding: 5rem 3rem;
+  }
+
+  .cap-inner { max-width: 1200px; margin: 0 auto; }
+
+  .cap-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 1rem;
+  }
+
+  .cap-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: -0.3px;
+    color: var(--text);
+  }
+
+  .cap-header p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--gray-700);
+    padding-top: 2.5rem;
+  }
+
+  .cap-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--gray-300); border: 1px solid var(--gray-300); }
+
+  .cap-card {
+    background: var(--white);
+    padding: 2.25rem 2rem;
+    position: relative;
+    transition: background 0.15s;
+  }
+
+  .cap-card:hover { background: #fdfcfa; }
+
+  .cap-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 400;
+    color: var(--gray-300);
+    line-height: 1;
+    margin-bottom: 1.25rem;
+  }
+
+  .cap-card h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.1px;
+  }
+
+  .cap-card p { font-size: 14px; line-height: 1.7; color: var(--gray-700); margin-bottom: 1rem; }
+
+  .cap-fee {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--gold);
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--gray-100);
+  }
+
+  /* ── COVERAGE ───────────────────────────────────────────── */
+  .coverage-section {
+    padding: 5rem 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .coverage-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
+
+  .coverage-section .sub {
+    font-size: 16px;
+    color: var(--gray-700);
+    margin-bottom: 3rem;
+    max-width: 560px;
+  }
+
+  .coverage-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border: 1px solid var(--gray-300);
+  }
+
+  .coverage-item {
+    padding: 1.5rem 1.75rem;
+    border-right: 1px solid var(--gray-300);
+    border-bottom: 1px solid var(--gray-300);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--gray-700);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background 0.15s, color 0.15s;
+    cursor: default;
+  }
+
+  .coverage-item:hover { background: var(--gold-light); color: var(--gold-dark); }
+
+  .coverage-item .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+
+  /* Remove right border on 4th column items */
+  .coverage-item:nth-child(4n) { border-right: none; }
+
+  /* ── TRANSACTIONS ───────────────────────────────────────────── */
+  .transactions-section {
+    background: var(--navy);
+    color: var(--white);
+    padding: 5rem 3rem;
+  }
+
+  .tx-inner { max-width: 1200px; margin: 0 auto; }
+
+  .tx-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3rem;
+  }
+
+  .tx-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    font-weight: 400;
+    color: var(--white);
+  }
+
+  .tx-header .section-label { color: var(--gold-bright); }
+
+  .tx-view-all {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding-bottom: 2px;
+    transition: color 0.15s;
+  }
+
+  .tx-view-all:hover { color: var(--white); }
+
+  .tx-highlights {
+    display: flex;
+    gap: 2.5rem;
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    flex-wrap: wrap;
+  }
+
+  .tx-highlight-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 500;
+    color: var(--gold-bright);
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .tx-highlight-label {
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.3px;
+  }
+
+  .tx-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.08); }
+
+  .tx-card {
+    background: var(--navy-mid);
+    padding: 2rem 1.75rem;
+    position: relative;
+    transition: background 0.15s;
+  }
+
+  .tx-card:hover { background: #213a50; }
+
+  .tx-card-wide { grid-column: 1 / -1; }
+
+  .tx-type {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.25rem;
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 2px;
+  }
+
+  .tx-type-cross { background: rgba(156,122,50,0.2); color: var(--gold-bright); }
+  .tx-type-entry { background: rgba(24,95,165,0.2); color: #7EB0E0; }
+  .tx-type-syndicate { background: rgba(133,79,11,0.2); color: #E0A96E; }
+  .tx-type-legal { background: rgba(153,53,86,0.2); color: #E07EA6; }
+  .tx-type-corporate { background: rgba(156,122,50,0.2); color: var(--gold-bright); }
+
+  .tx-card h3 {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+  }
+
+  .tx-card p { font-size: 13px; line-height: 1.7; color: rgba(255,255,255,0.55); margin-bottom: 1.5rem; }
+
+  .tx-result {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--gold-bright);
+    font-weight: 500;
+  }
+
+  .tx-check { width: 16px; height: 16px; border-radius: 50%; background: rgba(156,122,50,0.25); display: flex; align-items: center; justify-content: center; font-size: 9px; flex-shrink: 0; }
+
+  /* ── TEAM ───────────────────────────────────────────── */
+  .team-section {
+    padding: 5rem 3rem;
+    background: var(--off-white);
+    border-top: 1px solid var(--gray-300);
+  }
+
+  .team-inner { max-width: 1200px; margin: 0 auto; }
+
+  .team-inner h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    font-weight: 400;
+    margin-bottom: 0.75rem;
+  }
+
+  .team-inner .sub {
+    font-size: 16px;
+    color: var(--gray-700);
+    margin-bottom: 3rem;
+    max-width: 540px;
+  }
+
+  .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--gray-300); border: 1px solid var(--gray-300); }
+
+  .team-card {
+    background: var(--white);
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+  }
+
+  .team-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); position: relative; z-index: 1; }
+
+  .team-photo {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    background: var(--gray-100);
+    filter: grayscale(10%);
+    transition: filter 0.2s;
+  }
+
+  .team-card:hover .team-photo { filter: grayscale(0%); }
+
+  .team-card-info {
+    padding: 1.25rem 1.25rem 1.5rem;
+  }
+
+  .team-card h4 { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
+  .team-card .role { font-size: 13px; color: var(--gray-500); margin-bottom: 10px; }
+
+  .team-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 2px;
+    letter-spacing: 0.3px;
+    background: var(--gold-light);
+    color: var(--gold-dark);
+  }
+
+  .team-badge-law {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 2px;
+    letter-spacing: 0.5px;
+    background: var(--gold-light);
+    color: var(--gold);
+    border: 1px solid rgba(156,122,50,0.3);
+  }
+
+  /* ── WHY US ───────────────────────────────────────────── */
+  .why-section {
+    padding: 5rem 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .why-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    font-weight: 400;
+    margin-bottom: 0.75rem;
+  }
+
+  .why-section .sub {
+    font-size: 16px;
+    color: var(--gray-700);
+    margin-bottom: 3rem;
+  }
+
+  .why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--gray-300); border: 1px solid var(--gray-300); }
+
+  .why-card {
+    background: var(--white);
+    padding: 2.25rem 2rem;
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    transition: background 0.15s;
+  }
+
+  .why-card:hover { background: var(--off-white); }
+
+  .why-icon-box {
+    width: 44px;
+    height: 44px;
+    background: var(--gold-light);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--gold-dark);
+    font-size: 20px;
+  }
+
+  .why-card h4 { font-size: 16px; font-weight: 600; margin-bottom: 6px; color: var(--text); }
+  .why-card p { font-size: 14px; color: var(--gray-700); line-height: 1.7; }
+
+  /* ── CTA ───────────────────────────────────────────── */
+  .cta-section {
+    background: var(--gold);
+    color: var(--white);
+    padding: 5rem 3rem;
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    color: var(--white);
+  }
+
+  .cta-section p {
+    font-size: 17px;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 2.5rem;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+  }
+
+  .cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+  .btn-white {
+    background: var(--white);
+    color: var(--gold-dark);
+    border: none;
+    padding: 13px 28px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    border-radius: 2px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.15s;
+  }
+
+  .btn-white:hover { background: var(--gold-light); }
+
+  .btn-ghost-white {
+    background: transparent;
+    color: var(--white);
+    border: 1px solid rgba(255,255,255,0.5);
+    padding: 13px 28px;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    border-radius: 2px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.15s, border-color 0.15s;
+  }
+
+  .btn-ghost-white:hover { border-color: rgba(255,255,255,0.9); background: rgba(255,255,255,0.1); }
+
+  /* ── FOOTER ───────────────────────────────────────────── */
+  footer {
+    background: var(--navy);
+    color: rgba(255,255,255,0.5);
+    padding: 2.5rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .footer-logo {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--white);
+    letter-spacing: 0.3px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .footer-logo span { color: var(--gold-bright); }
+
+  .footer-logo img {
+    height: 22px;
+    width: auto;
+    filter: brightness(0) invert(1);
+  }
+
+  .footer-links { display: flex; gap: 2rem; }
+
+  .footer-links a {
+    font-size: 13px;
+    color: rgba(255,255,255,0.45);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .footer-links a:hover { color: var(--white); }
+
+  .footer-copy { font-size: 12px; color: rgba(255,255,255,0.3); }
+
+  /* ── DIVIDER LINE ───────────────────────────────────────────── */
+  .section-divider {
+    height: 1px;
+    background: var(--gray-300);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* ── RESPONSIVE ───────────────────────────────────────────── */
+  @media (max-width: 960px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .hero h1 { font-size: 38px; }
+    .intro-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .cap-header { grid-template-columns: 1fr; gap: 1.5rem; }
+    .cap-grid { grid-template-columns: 1fr; }
+    .coverage-grid { grid-template-columns: repeat(2, 1fr); }
+    .coverage-item:nth-child(4n) { border-right: 1px solid var(--gray-300); }
+    .coverage-item:nth-child(2n) { border-right: none; }
+    .tx-grid { grid-template-columns: 1fr; }
+    .tx-card-wide { grid-column: 1; }
+    .team-grid { grid-template-columns: repeat(2, 1fr); }
+    .why-grid { grid-template-columns: 1fr; }
+    nav { padding: 0 1.5rem; }
+    .nav-links { display: none; }
+    .hero, .capabilities-section, .transactions-section, .team-section, .why-section, .coverage-section, .cta-section { padding: 3rem 1.5rem; }
+    .intro-section { padding: 3rem 1.5rem; }
+    footer { flex-direction: column; text-align: center; padding: 2rem 1.5rem; }
+    .footer-links { flex-wrap: wrap; justify-content: center; gap: 1rem; }
+  }
+
+  @media (max-width: 600px) {
+    .stats-row { grid-template-columns: repeat(3, 1fr); }
+    .coverage-grid { grid-template-columns: 1fr; }
+    .coverage-item { border-right: none !important; }
+    .team-grid { grid-template-columns: 1fr 1fr; }
+    .hero h1 { font-size: 32px; }
+    .cta-section h2 { font-size: 30px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── NAVIGATION ── -->
+<nav>
+  <a href="#" class="nav-logo"><img src="images/teyra-logo-transparent.png" alt="Teyra Partners"></a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#transactions">Transactions</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="lang-switch">
+    <a href="index.html" class="active">EN</a>
+    <a href="ru.html">RU</a>
+    <a href="kz.html">KZ</a>
+  </div>
+  <a href="mailto:info@teyrapartners.com" class="nav-cta">Get in touch</a>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-breadcrumb">
+    <a href="#">Teyra Partners</a>
+    <span>›</span>
+    M&A and Strategic Advisory
+  </div>
+  <div class="hero-inner">
+    <div>
+      <h1>M&A and Strategic Advisory in Central Asia</h1>
+      <p class="hero-lead">Teyra Partners is one of the region's leading advisors on mergers, acquisitions, fundraising, and related strategic matters. We partner with founders, business owners, and investors to structure deals and grow assets across Central Asia and beyond.</p>
+      <div class="hero-actions">
+        <a href="mailto:info@teyrapartners.com" class="btn-primary-dark">Start a conversation →</a>
+        <a href="#services" class="btn-ghost">Our services</a>
+      </div>
+    </div>
+    <div class="hero-stats-card">
+      <div class="stats-row">
+        <div class="stat-box">
+          <span class="stat-num">30+</span>
+          <div class="stat-label">Deals closed</div>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num">12+</span>
+          <div class="stat-label">Deal volume</div>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num">10+</span>
+          <div class="stat-label">Years of experience</div>
+        </div>
+      </div>
+      <div class="hero-deals">
+        <div class="deal-row">
+          <div class="deal-dot"></div>
+          <div class="deal-name">Foreign oilfield services co. · AIFC structuring</div>
+          <span class="deal-badge badge-closed">Closed</span>
+        </div>
+        <div class="deal-row">
+          <div class="deal-dot"></div>
+          <div class="deal-name">KPN Group (Belgium) · Telecom-to-banking strategy</div>
+          <span class="deal-badge badge-closed">Closed</span>
+        </div>
+        <div class="deal-row">
+          <div class="deal-dot"></div>
+          <div class="deal-name">16 angel syndicate deals · SPV setup</div>
+          <span class="deal-badge badge-closed">Closed</span>
+        </div>
+        <div class="deal-row">
+          <div class="deal-dot"></div>
+          <div class="deal-name">Major KZ bank · Digital transformation</div>
+          <span class="deal-badge badge-active">Active</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── INTRO ── -->
+<div class="intro-section">
+  <div class="section-label">About Teyra Partners</div>
+  <div class="intro-grid">
+    <div>
+      <h2>A strategic advisory firm built for Central Asian markets</h2>
+    </div>
+    <div class="intro-body">
+      <p>Teyra Partners delivers guidance across the full spectrum of M&A transactions, capital raises, and strategic growth initiatives. Our practice is grounded in deep regional knowledge — the people, the regulation, and the deal culture of Kazakhstan, Uzbekistan, and Kyrgyzstan.</p>
+      <p>We provide internationally recognised, investor-ready structuring for every transaction we handle. We act as a genuine strategic partner, not just an intermediary.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- ── CAPABILITIES ── -->
+<section id="services" class="capabilities-section">
+  <div class="cap-inner">
+    <div class="cap-header">
+      <div>
+        <div class="section-label">What we do</div>
+        <h2>Three ways we create value</h2>
+      </div>
+      <p>Whether you are selling a business, raising capital, or looking to grow your wealth — we structure the right deal for you and stay with you through every stage of the process.</p>
+    </div>
+    <div class="cap-grid">
+
+      <div class="cap-card">
+        <div class="cap-num">01</div>
+        <h3>M&A Advisory</h3>
+        <p>We guide business owners through the full cycle of buying or selling a company — from valuation and structuring to closing. We act as your strategic partner, not just a broker. Our regional network and AIFC expertise mean deals are structured to close.</p>
+        <div class="cap-fee">Retainer + 1–3% success fee</div>
+      </div>
+
+      <div class="cap-card">
+        <div class="cap-num">02</div>
+        <h3>Fundraising Advisory</h3>
+        <p>We help growth-stage companies in Central Asia connect with the right investors — family offices, regional venture funds, and international capital. Our access to the regional investor network means we bring qualified capital to the table, not just introductions.</p>
+        <div class="cap-fee">Retainer + 3–5% success fee</div>
+      </div>
+
+      <div class="cap-card">
+        <div class="cap-num">03</div>
+        <h3>Asset Management</h3>
+        <p>For sophisticated investors looking to deploy capital in Central Asian markets. We offer discretionary mandates, club deals, and structured investment vehicles — drawing on our deal flow and regional relationships to identify and execute opportunities others cannot access.</p>
+        <div class="cap-fee">2% management fee + 20% carry</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── COVERAGE ── -->
+<section class="coverage-section">
+  <div class="section-label">Geographic & sector coverage</div>
+  <h2>Where we operate</h2>
+  <p class="sub">We cover the full breadth of Central Asian markets and the deal types that matter most to founders, investors, and corporates in the region.</p>
+  <div class="coverage-grid">
+    <div class="coverage-item"><div class="dot"></div>Kazakhstan</div>
+    <div class="coverage-item"><div class="dot"></div>Uzbekistan</div>
+    <div class="coverage-item"><div class="dot"></div>Kyrgyzstan</div>
+    <div class="coverage-item"><div class="dot"></div>AIFC / Astana Hub</div>
+    <div class="coverage-item"><div class="dot"></div>Technology & Digital</div>
+    <div class="coverage-item"><div class="dot"></div>Financial Institutions</div>
+    <div class="coverage-item"><div class="dot"></div>Real Assets</div>
+    <div class="coverage-item"><div class="dot"></div>Consumer & Retail</div>
+    <div class="coverage-item"><div class="dot"></div>Cross-border Deals</div>
+    <div class="coverage-item"><div class="dot"></div>SPV & Syndicate Deals</div>
+    <div class="coverage-item"><div class="dot"></div>Angel & Venture Capital</div>
+    <div class="coverage-item"><div class="dot"></div>Corporate Restructuring</div>
+  </div>
+</section>
+
+<!-- ── TRANSACTIONS ── -->
+<section id="transactions" class="transactions-section">
+  <div class="tx-inner">
+    <div class="tx-header">
+      <div>
+        <div class="section-label">Case studies</div>
+        <h2>Deals we have structured</h2>
+      </div>
+      <a href="mailto:info@teyrapartners.com" class="tx-view-all">Discuss your transaction →</a>
+    </div>
+
+    <div class="tx-highlights">
+      <div>
+        <span class="tx-highlight-num">16</span>
+        <div class="tx-highlight-label">Deals structured</div>
+      </div>
+      <div>
+        <span class="tx-highlight-num">$6M+</span>
+        <div class="tx-highlight-label">Raised into startups</div>
+      </div>
+      <div>
+        <span class="tx-highlight-num">$6M+</span>
+        <div class="tx-highlight-label">Deployed into real business</div>
+      </div>
+    </div>
+
+    <div class="tx-grid">
+
+      <div class="tx-card">
+        <span class="tx-type tx-type-cross">Cross-border structuring</span>
+        <h3>Brought a foreign oilfield services company into Kazakhstan</h3>
+        <p>Structured a foreign oilfield services company into the AIFC framework to enable business operations in Kazakhstan. Managed full legal and corporate setup under international jurisdiction.</p>
+        <div class="tx-result">
+          <div class="tx-check">✓</div>
+          Successfully registered and operational under AIFC
+        </div>
+      </div>
+
+      <div class="tx-card">
+        <span class="tx-type tx-type-entry">Corporate advisory</span>
+        <h3>KPN Group (Belgium) · Digital strategy</h3>
+        <p>Delivered a digital strategy advisory mandate for KPN Group, supporting the company's transition from telecom into the banking sector, including market entry approach and operating model design.</p>
+        <div class="tx-result">
+          <div class="tx-check">✓</div>
+          Strategy adopted for telecom-to-banking transition
+        </div>
+      </div>
+
+      <div class="tx-card">
+        <span class="tx-type tx-type-syndicate">Syndicate structuring</span>
+        <h3>16 angel syndicate deals · SPV setup</h3>
+        <p>Structured and closed 16 investment transactions with business angels through SPV creation and syndicate management. Coordinated investor relations and legal documentation for each deal.</p>
+        <div class="tx-result">
+          <div class="tx-check">✓</div>
+          16 deals closed · SPV and syndicate fully structured
+        </div>
+      </div>
+
+      <div class="tx-card">
+        <span class="tx-type tx-type-legal">Legal advisory</span>
+        <h3>Startup investment rounds</h3>
+        <p>Served as legal advisor across multiple SAFE investment rounds, protecting founders' interests and structuring terms with institutional investors. In total, $6M was raised into startups through these transactions.</p>
+        <div class="tx-result">
+          <div class="tx-check">✓</div>
+          $6M raised · Founder interests protected
+        </div>
+      </div>
+
+      <div class="tx-card" style="grid-column: span 2;">
+        <span class="tx-type tx-type-corporate">Corporate advisory</span>
+        <h3>Major Kazakhstani bank · Digital transformation strategy</h3>
+        <p>Delivered a comprehensive digital transformation and B2B strategy for one of Kazakhstan's leading banks. Focused on revenue growth initiatives, digital product roadmap, and organisational change management — resulting in a transformative improvement to net profitability.</p>
+        <div class="tx-result">
+          <div class="tx-check">✓</div>
+          Net profit growth of 3.9× following implementation
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── TEAM ── -->
+<section id="team" class="team-section">
+  <div class="team-inner">
+    <div class="section-label">Our team</div>
+    <h2>Built for this market</h2>
+    <p class="sub">A team combining deal expertise, legal depth, and deep regional knowledge — people who have done this before and know what it takes to close.</p>
+    <div class="team-grid">
+
+      <div class="team-card">
+        <img class="team-photo" src="images/Баубек фото.png" alt="Baubek Turekhanov">
+        <div class="team-card-info">
+          <h4>Baubek Turekhanov</h4>
+          <div class="role">CEO</div>
+          <span class="team-badge">Leadership · Strategy</span>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <img class="team-photo" src="images/Lenzat.png" alt="Anuarbek Lenzat">
+        <div class="team-card-info">
+          <h4>Anuarbek Lenzat</h4>
+          <div class="role">CFO</div>
+          <span class="team-badge">M&A · Finance</span>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <img class="team-photo" src="images/karakoz.jpeg" alt="Karakoz Tasbolatova">
+        <div class="team-card-info">
+          <h4>Karakoz Tasbolatova</h4>
+          <div class="role">CIO</div>
+          <span class="team-badge">Investor Relations</span>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <img class="team-photo" src="images/Алмас.jpeg" alt="Almas Serikuly">
+        <div class="team-card-info">
+          <h4>Almas Serikuly</h4>
+          <div class="role">Legal Partner</div>
+          <span class="team-badge-law">English law</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY US ── -->
+<section class="why-section">
+  <div class="section-label">Why Teyra Partners</div>
+  <h2>What sets us apart</h2>
+  <p class="sub">Four reasons clients choose Teyra Partners for the deals that matter most.</p>
+  <div class="why-grid">
+
+    <div class="why-card">
+      <div class="why-icon-box">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </div>
+      <div>
+        <h4>Local depth</h4>
+        <p>We know Kazakhstan, Uzbekistan, and Kyrgyzstan — the people, the regulation, and the deal culture. Local insight that no international firm can replicate.</p>
+      </div>
+    </div>
+
+    <div class="why-card">
+      <div class="why-icon-box">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div>
+        <h4>AIFC structured</h4>
+        <p>All deals can be structured under AIFC jurisdiction — internationally recognised, investor-ready documentation that satisfies both local and cross-border requirements.</p>
+      </div>
+    </div>
+
+    <div class="why-card">
+      <div class="why-icon-box">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <div>
+        <h4>Investor network</h4>
+        <p>Direct access to family offices, regional funds, and HNW individuals actively deploying capital in Central Asia — not just warm introductions but relationships built on completed deals.</p>
+      </div>
+    </div>
+
+    <div class="why-card">
+      <div class="why-icon-box">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      </div>
+      <div>
+        <h4>Aligned incentives</h4>
+        <p>We only win when you win. Our success fee model means we are fully committed to closing the right deal at the right terms — not just getting a transaction done.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section id="contact" class="cta-section">
+  <div class="section-label" style="color:rgba(255,255,255,0.6);">Get started</div>
+  <h2>Ready to structure your next deal?</h2>
+  <p>Whether you are buying, selling, or raising — let's talk about what's possible in Central Asia's most dynamic markets.</p>
+  <div class="cta-btns">
+    <a href="tel:+77064043329" class="btn-white">Call us: +7 706 404 33 29</a>
+    <a href="mailto:info@teyrapartners.com" class="btn-ghost-white">Send us a message</a>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-logo"><img src="images/teyra-logo-transparent.png" alt="Teyra Partners"></div>
+  <div class="footer-links">
+    <a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://t.me/KarakozT" target="_blank" rel="noopener">Telegram</a>
+    <a href="mailto:info@teyrapartners.com">info@teyrapartners.com</a>
+    <a href="tel:+77064043329">+7 706 404 33 29</a>
+  </div>
+  <div class="footer-copy">© 2026 Teyra Partners.</div>
+</footer>
+
+</body>
+</html>
